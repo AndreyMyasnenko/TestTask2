@@ -90,16 +90,16 @@ namespace ExchangeManager
             }
         }
 
-        private decimal GetExchangeRate(Currency currencyFrom)
+        private decimal GetExchangeRate(Currency currency)
         {
-            if (!_currencyRates.TryGetExchangeRate(currencyFrom, out decimal exchangeRateFrom))
+            if (!_currencyRates.TryGetExchangeRate(currency, out decimal exchangeRate))
             {
-                var ex = new CurrencyRateUnavailableException(currencyFrom.ToString());
+                var ex = new CurrencyRateUnavailableException(currency.ToString());
                 _logger.LogException(ex);
                 throw ex;
             }
 
-            return exchangeRateFrom;
+            return exchangeRate;
         }
     }
 }
