@@ -38,6 +38,7 @@ namespace ExchangeManagerConsole
 
         class DumbLogger : ILogger
         {
+            //test
             public void LogException(Exception e)
             {
                 Console.WriteLine(e.Message);
